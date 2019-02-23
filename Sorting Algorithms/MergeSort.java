@@ -60,7 +60,6 @@ public class MergeSort
   
             mergeSort(arr, left, middle); 
             mergeSort(arr , middle+1, right); 
-  
             merge(arr, left, middle, right); 
         } 
     }

@@ -1,4 +1,9 @@
 public class QuickSort{
+    /*
+    *INPUT: arr[] -- the arr that need to sort
+    *       low -- the index of the first element (usually 0 at the start)
+    *       high -- the index of the last element (usually equals arr.length - 1)
+    */
     public static void quickSort(int arr[],int low,int high)
     {
         if (low < high)

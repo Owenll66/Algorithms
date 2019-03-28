@@ -1,5 +1,11 @@
 public class MergeSort
 {
+   /*
+    *INPUT: arr -- the array to merge
+    *       left -- the left element index (usually 0 at the start)
+    *       middle -- the middle element index ((left + right) / 2)
+    *       right -- the right element index (usually arr.lenth-1 at the start)
+    */
     public static void merge(int arr[], int left, int middle, int right) 
     { 
         int i, j, k; 
@@ -52,6 +58,11 @@ public class MergeSort
             k++; 
         }
     }
+    /*
+    *INPUT: arr -- the array need to sort
+    *       left -- the left element index (usually 0 at the start)
+    *       right -- the right element index (usually arr.lenth-1 at the start)
+    */
     static void mergeSort(int arr[], int left, int right) 
     { 
         if (left < right) 

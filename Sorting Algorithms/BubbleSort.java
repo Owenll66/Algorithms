@@ -1,5 +1,8 @@
 public class BubbleSort
 {
+    /*
+    *INPUT: input -- the array need to sort
+    */
     static void bubbleSort(int[] input)
     {
 	int temp = 0;

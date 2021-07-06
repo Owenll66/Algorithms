@@ -17,7 +17,8 @@ public class MergeSort
         
         //copy the left half to arr L
         for (i = 0; i < n1; i++) 
-            L[i] = arr[left + i]; 
+            L[i] = arr[left + i];
+       
         //copy the right half to arr R
         for (j = 0; j < n2; j++) 
             R[j] = arr[middle + 1+ j]; 

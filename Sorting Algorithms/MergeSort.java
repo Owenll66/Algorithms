@@ -2,33 +2,32 @@ public class MergeSort
 {
    /*
     *INPUT: arr -- the array to merge
-    *       left -- the left element index (usually 0 at the start)
+    *       firstIndex -- the first element index (usually 0 at the start)
     *       middle -- the middle element index ((left + right) / 2)
-    *       right -- the right element index (usually arr.lenth-1 at the end)
+    *       rightIndex -- the last element index (usually arr.lenth-1 at the end)
     */
-    public static void merge(int arr[], int left, int middle, int right) 
+    public static void merge(int arr[], int firstIndex, int middle, int lastIndex) 
     { 
-        int i, j, k; 
-        int n1 = middle - left + 1; 
-        int n2 =  right - middle; 
+        int leftArrayLength = middle - firstIndex + 1; 
+        int rightArrayLength =  lastIndex - middle; 
       
-        int[] L = new int[n1]; 
-        int[] R = new int[n2]; 
+        int[] L = new int[leftArrayLength]; 
+        int[] R = new int[rightArrayLength]; 
         
         //copy the left half to arr L
-        for (i = 0; i < n1; i++) 
-            L[i] = arr[left + i];
+        for (int i = 0; i < leftArrayLength; i++) 
+            L[i] = arr[firstIndex + i];
        
         //copy the right half to arr R
-        for (j = 0; j < n2; j++) 
-            R[j] = arr[middle + 1+ j]; 
+        for (int i = 0; i < rightArrayLength; i++) 
+            R[i] = arr[middle + 1+ i]; 
       
-        i = 0;
-        j = 0;
-        k = left;
+        int i = 0;
+        int j = 0;
+        int k = firstIndex;
         
         //sort array from the smallest to the largest
-        while (i < n1 && j < n2) 
+        while (i < leftArrayLength && j < rightArrayLength) 
         { 
             if (L[i] <= R[j]) 
             { 
@@ -39,12 +38,13 @@ public class MergeSort
             { 
                 arr[k] = R[j]; 
                 j++; 
-            } 
+            }
+
             k++; 
         } 
       
         //add the remaining elements from arr L to the end
-        while (i < n1) 
+        while (i < leftArrayLength) 
         { 
             arr[k] = L[i]; 
             i++; 
@@ -52,7 +52,7 @@ public class MergeSort
         } 
       
         //add the remaining elements from arr R to the end
-        while (j < n2) 
+        while (j < rightArrayLength) 
         { 
             arr[k] = R[j]; 
             j++; 
@@ -61,18 +61,18 @@ public class MergeSort
     }
     /*
     *INPUT: arr -- the array need to sort
-    *       left -- the left element index (usually 0 at the start)
-    *       right -- the right element index (usually arr.lenth-1 at the end)
+    *       first -- the first element index (usually 0 at the start)
+    *       last -- the last element index (usually arr.lenth-1 at the end)
     */
-    static void mergeSort(int arr[], int left, int right) 
+    static void mergeSort(int arr[], int firstIndex, int lastIndex) 
     { 
-        if (left < right) 
+        if (firstIndex < lastIndex) 
         { 
-            int middle = (left+right)/2; 
+            int middle = (firstIndex+lastIndex)/2; 
   
-            mergeSort(arr, left, middle); 
-            mergeSort(arr , middle+1, right); 
-            merge(arr, left, middle, right); 
+            mergeSort(arr, firstIndex, middle); 
+            mergeSort(arr , middle+1, lastIndex); 
+            merge(arr, firstIndex, middle, lastIndex); 
         } 
     }
     

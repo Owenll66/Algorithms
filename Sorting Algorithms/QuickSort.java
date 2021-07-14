@@ -1,27 +1,27 @@
 public class QuickSort{
     /*
     *INPUT: arr[] -- the arr that need to sort
-    *       low -- the index of the first element (usually 0 at the start)
-    *       high -- the index of the last element (usually equals arr.length - 1)
+    *       firstIndex -- the index of the first element (usually 0 at the start)
+    *       lastIndex -- the index of the last element (usually equals arr.length - 1)
     */
-    public static void quickSort(int arr[],int low,int high)
+    public static void quickSort(int arr[],int firstIndex,int lastIndex)
     {
-        if (low < high)
+        if (firstIndex < lastIndex)
         {
-            int pivot = partition(arr, low, high);
+            int pivotIndex = partition(arr, firstIndex, lastIndex);
     
-            quickSort(arr, low, pivot - 1);
-            quickSort(arr, pivot + 1, high); 
+            quickSort(arr, firstIndex, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, lastIndex); 
         }
     }
     /** great partition explanation https://www.youtube.com/watch?v=MZaf_9IZCrc **/
-    public static int partition(int arr[], int low, int high) 
+    public static int partition(int arr[], int firstIndex, int lastIndex) 
     { 
-        int pivot = arr[high];  
-        int i = (low-1); 
+        int pivot = arr[lastIndex];  
+        int i = (firstIndex-1); 
         /*move the element smaller than pivot to the left side, arr[0]-arr[i]
         are smaller than the pivot*/
-        for (int j=low; j<high; j++) 
+        for (int j=firstIndex; j<lastIndex; j++) 
         { 
 
             if (arr[j] <= pivot) 
@@ -35,8 +35,8 @@ public class QuickSort{
         } 
         //switch the pivot to the right position
         int temp = arr[i+1]; 
-        arr[i+1] = arr[high]; 
-        arr[high] = temp; 
+        arr[i+1] = arr[lastIndex]; 
+        arr[lastIndex] = temp; 
   
         return i+1; 
     }

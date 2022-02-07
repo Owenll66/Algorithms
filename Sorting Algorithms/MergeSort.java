@@ -22,11 +22,11 @@ public class MergeSort
         
         for (int i = 0; i < rightArrayLength; i++) 
             R[i] = arr[middleIndex + 1+ i]; 
-      
+
         int i = 0;
         int j = 0;
         int k = firstIndex;
-        
+
         // Sort array from the smallest to the largest
         while (i < leftArrayLength && j < rightArrayLength) 
         { 

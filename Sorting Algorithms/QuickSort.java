@@ -27,7 +27,7 @@ public class QuickSort{
         { 
 
             if (arr[j] <= pivot)
-            { 
+            {
                 i++;
 
                 int temp = arr[i];
@@ -63,13 +63,16 @@ public class QuickSort{
         System.out.println();
         //Test2
         System.out.print("Test2:\n");
+
         for(int i = 0; i < test2.length; i++)
         {
-          System.out.print(" "+test2[i]);
+            System.out.print(" "+test2[i]);
         }
+
         System.out.println();
         quickSort(test2, 0, test2.length - 1);
         System.out.print("Result after quickSort:\n");
+
         for(int i = 0; i < test2.length; i++)
         {
           System.out.print(" "+test2[i]);

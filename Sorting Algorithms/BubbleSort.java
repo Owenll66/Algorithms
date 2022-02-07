@@ -1,27 +1,27 @@
 public class BubbleSort
 {
     /*
-    *INPUT: input -- the array need to sort
+    * INPUT: input -- the array need to sort
     */
     static void bubbleSort(int[] input)
     {
-	int temp = 0;
-	for(int i = 0; i < input.length; i++)
-	{
-		for(int j = 0; j < input.length-i-1; j++)
-		{
-			if(input[j] > input[j+1])
-			{
-				temp = input[j];
-				input[j] = input[j+1];
-				input[j+1] = temp;
-			}
-		}
-	}
+        int temp = 0;
+        for(int i = 0; i < input.length; i++)
+        {
+            for(int j = 0; j < input.length-i-1; j++)
+            {
+                if(input[j] > input[j+1])
+                {
+                    temp = input[j];
+                    input[j] = input[j+1];
+                    input[j+1] = temp;
+                }
+            }
+        }
     }
     public static void main(String[] args)
     {
-	int[] test1 = {9,5,8,7,2,3,4,1,6};
+    int[] test1 = {9,5,8,7,2,3,4,1,6};
 	int[] test2 = {123,4564,12,8456,87,2318,5};
 	//Test1
 	System.out.print("Test1:\n");

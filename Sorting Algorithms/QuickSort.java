@@ -47,36 +47,24 @@ public class QuickSort{
     {
         int[] test1 = {1, 3 ,8 ,9, 7, 5, 4, 2, 6};
         int[] test2 = {123, 4678, 798, 4654564, 145, 623, 33};
+
+        // Test1
         System.out.print("Test1:\n");
-        for(int i = 0; i < test1.length; i++)
-        {
-          System.out.print(" "+test1[i]);
-        }
+        printArray(test1);
         System.out.println();
         quickSort(test1, 0, test1.length - 1);
         System.out.print("Result after quickSort:\n");
-        for(int i = 0; i < test1.length; i++)
-        {
-          System.out.print(" "+test1[i]);
-        }
-        System.out.println();
-        System.out.println();
-        //Test2
-        System.out.print("Test2:\n");
+        printArray(test1);
+        System.out.println("\n");
 
-        for(int i = 0; i < test2.length; i++)
-        {
-            System.out.print(" "+test2[i]);
-        }
+        // Test2
+        System.out.print("Test2:\n");
+        printArray(test2);
 
         System.out.println();
         quickSort(test2, 0, test2.length - 1);
         System.out.print("Result after quickSort:\n");
-
-        for(int i = 0; i < test2.length; i++)
-        {
-          System.out.print(" "+test2[i]);
-        }
+        printArray(test2);
     }
 
     private static void printArray(int[] arr)

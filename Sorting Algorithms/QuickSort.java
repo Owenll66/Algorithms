@@ -79,7 +79,7 @@ public class QuickSort{
         }
     }
 
-    public static void printArray(int[] arr)
+    private static void printArray(int[] arr)
     {
         System.out.print("[ ");
 

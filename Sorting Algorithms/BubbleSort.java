@@ -1,20 +1,17 @@
 public class BubbleSort
 {
-    /*
-    * INPUT: input -- the array need to sort
-    */
-    static void bubbleSort(int[] input)
+    static void bubbleSort(int[] arr)
     {
         int temp = 0;
-        for(int i = 0; i < input.length; i++)
+        for(int i = 0; i < arr.length; i++)
         {
-            for(int j = 0; j < input.length-i-1; j++)
+            for(int j = 0; j < arr.length-i-1; j++)
             {
-                if(input[j] > input[j+1])
+                if(arr[j] > arr[j+1])
                 {
-                    temp = input[j];
-                    input[j] = input[j+1];
-                    input[j+1] = temp;
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
                 }
             }
         }
@@ -27,36 +24,32 @@ public class BubbleSort
 
         //Test1
         System.out.print("Test1:\n");
-        for(int i = 0; i < test1.length; i++)
-        {
-            System.out.print(" "+test1[i]);
-        }
+        printArray(test1);
         System.out.println();
 
         bubbleSort(test1);
         System.out.print("Result after bubbleSort:\n");
-        for(int i = 0; i < test1.length; i++)
-        {
-            System.out.print(" "+test1[i]);
-        }
-        System.out.println();
-        System.out.println();
+        printArray(test1);
+        System.out.println("\n");
 
         //Test2
         System.out.print("Test2:\n");
-        for(int i = 0; i < test2.length; i++)
-        {
-            System.out.print(" "+test2[i]);
-        }
+        printArray(test2);
 
         System.out.println();
         bubbleSort(test2);
         System.out.print("Result after bubbleSort:\n");
+        printArray(test2);
+    }
 
-        for(int i = 0; i < test2.length; i++)
-        {
-            System.out.print(" "+test2[i]);
+    private static void printArray(int[] arr)
+    {
+        System.out.print("[ ");
+
+        for (int i : arr) {
+            System.out.print(i + " ");
         }
-        System.out.println();
+
+        System.out.print("]");
     }
 }

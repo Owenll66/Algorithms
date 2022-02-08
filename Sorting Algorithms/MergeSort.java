@@ -100,7 +100,7 @@ public class MergeSort
         printArray(test2);
     }
 
-    public static void printArray(int[] arr)
+    private static void printArray(int[] arr)
     {
         System.out.print("[ ");
 

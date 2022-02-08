@@ -10,34 +10,27 @@ public class MergeSort
     */
     public static void merge(int arr[], int firstIndex, int middleIndex, int lastIndex) 
     { 
-        int leftArrayLength = middleIndex - firstIndex + 1; 
-        int rightArrayLength =  lastIndex - middleIndex; 
-
         // Copy the left half to arr L
-        int[] L = Arrays.copyOfRange(arr, firstIndex, middleIndex + 1);
+        int[] leftArr = Arrays.copyOfRange(arr, firstIndex, middleIndex + 1);
 
         // Copy the right half to arr R
-        int[] R = Arrays.copyOfRange(arr, middleIndex + 1, lastIndex + 1); 
-
-        
-        for (int i = 0; i < rightArrayLength; i++) 
-            R[i] = arr[middleIndex + 1+ i]; 
+        int[] rightArr = Arrays.copyOfRange(arr, middleIndex + 1, lastIndex + 1); 
 
         int i = 0;
         int j = 0;
         int k = firstIndex;
 
         // Sort array from the smallest to the largest
-        while (i < leftArrayLength && j < rightArrayLength) 
+        while (i < leftArr.length && j < rightArr.length) 
         { 
-            if (L[i] <= R[j]) 
+            if (leftArr[i] <= rightArr[j]) 
             { 
-                arr[k] = L[i]; 
+                arr[k] = leftArr[i]; 
                 i++; 
             } 
             else
             { 
-                arr[k] = R[j]; 
+                arr[k] = rightArr[j]; 
                 j++; 
             }
 
@@ -45,21 +38,22 @@ public class MergeSort
         } 
       
         // Add the remaining elements from arr L to the end
-        while (i < leftArrayLength) 
+        while (i < leftArr.length) 
         { 
-            arr[k] = L[i]; 
+            arr[k] = leftArr[i]; 
             i++; 
             k++; 
         } 
       
         // Add the remaining elements from arr R to the end
-        while (j < rightArrayLength) 
+        while (j < rightArr.length) 
         { 
-            arr[k] = R[j]; 
+            arr[k] = rightArr[j]; 
             j++; 
             k++; 
         }
     }
+
     /*
     * INPUT: arr -- the array need to sort
     *        first -- the first element index (usually 0 at the start)
